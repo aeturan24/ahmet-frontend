@@ -1,9 +1,22 @@
 import requests
 import os
 import time
+import threading
+from flask import Flask
 from dotenv import load_dotenv
 
 load_dotenv()
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!", 200
+
+def run_server():
+    port = int(os.environ.get("PORT", 10000))
+    # use_reloader=False prevents Flask from running twice in a thread
+    app.run(host="0.0.0.0", port=port, use_reloader=False)
 
 def fetch_data():
     api_url = os.getenv("STRAPI_API_URL", "")
@@ -45,10 +58,18 @@ def fetch_data():
     except Exception as e:
         print(f"Connection Error: {e}")
 
-if __name__ == "__main__":
+def bot_task():
     print("Starting background bot...")
     fetch_data()
     print("Data fetch task finished. Entering background sleep loop...")
     while True:
         time.sleep(60)
         print("Bot is alive and waiting...")
+
+if __name__ == "__main__":
+    # Start the Flask web server in a background thread to satisfy Render's port binding requirement
+    server_thread = threading.Thread(target=run_server, daemon=True)
+    server_thread.start()
+    
+    # Run the main bot logic in the main thread
+    bot_task()
