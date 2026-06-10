@@ -70,12 +70,12 @@ def get_existing_place(place_name, api_url, token):
     return None, None
 
 PROMPT_MAP = {
-    'Eyfel Kulesi': 'Eiffel Tower Paris, highly detailed architectural photography, daytime, beautiful sky',
-    'Louvre Müzesi': 'Louvre Museum Paris glass pyramid, highly detailed, beautiful sunset',
-    'Kolezyum': 'Colosseum Rome, historical ruins, cinematic lighting, 8k',
-    'Trevi Çeşmesi': 'Trevi Fountain Rome, beautiful water fountain, marble sculptures, sunny day',
-    'Özgürlük Anıtı': 'Statue of Liberty New York, landscape, cinematic, beautiful lighting',
-    'Central Park': 'Central Park New York, beautiful trees, skyscrapers in background, sunny day'
+    'Big Ben': 'Big Ben London, highly detailed architectural photography, nighttime, beautiful starry sky, golden lights',
+    'London Eye': 'London Eye observation wheel, beautiful sunset reflection on the River Thames, cinematic 8k',
+    'Fuji Dağı': 'Mount Fuji Japan, snow capped mountain, cherry blossoms, beautiful majestic landscape, photorealistic',
+    'Senso-ji Tapınağı': 'Senso-ji Temple Tokyo, traditional Japanese architecture, vibrant red lanterns, serene atmosphere, 8k',
+    'Gize Piramitleri': 'Pyramids of Giza Cairo, beautiful golden hour desert landscape, ancient wonder, highly detailed',
+    'Büyük Sfenks': 'Great Sphinx of Giza Cairo, majestic ancient monument, desert sunset, mysterious atmosphere, cinematic lighting'
 }
 
 def get_place_image(place_name, api_url, token):
@@ -360,53 +360,53 @@ def main():
     
     mock_data = [
         {
-            "name": "Paris",
-            "country": "Fransa",
-            "description": "Aşkın, sanatın ve modanın başkenti. Işıklar şehri olarak bilinen romantik metropol.",
+            "name": "Londra",
+            "country": "Birleşik Krallık",
+            "description": "Tarihi ve modernin muazzam uyumu. Thames Nehri kıyısında yükselen büyüleyici başkent.",
             "places": [
                 {
-                    "name": "Eyfel Kulesi",
-                    "description": "Paris'in ve Fransa'nın sembolü olan dünyaca ünlü demir kule.",
+                    "name": "Big Ben",
+                    "description": "Londra'nın sembolü haline gelmiş ünlü saat kulesi, gotik mimarinin şaheseri.",
                     "rating": 9.8
                 },
                 {
-                    "name": "Louvre Müzesi",
-                    "description": "Dünyanın en büyük ve en ünlü sanat müzelerinden biri. Mona Lisa'ya ev sahipliği yapar.",
-                    "rating": 9.7
+                    "name": "London Eye",
+                    "description": "Şehrin eşsiz manzarasını sunan, Thames Nehri kıyısındaki devasa dönme dolap.",
+                    "rating": 9.5
                 }
             ]
         },
         {
-            "name": "Roma",
-            "country": "İtalya",
-            "description": "Tarih, sanat ve kültürle harmanlanmış Ebedi Şehir. Antik kalıntıların modern yaşamla iç içe olduğu yer.",
+            "name": "Tokyo",
+            "country": "Japonya",
+            "description": "Geleneksel tapınakların ve neon ışıklı gökdelenlerin bir arada bulunduğu büyüleyici metropol.",
             "places": [
                 {
-                    "name": "Kolezyum",
-                    "description": "Antik Roma'nın gladyatör dövüşlerine sahne olan devasa amfitiyatrosu.",
+                    "name": "Fuji Dağı",
+                    "description": "Japonya'nın en yüksek ve en ikonik dağı, nefes kesici doğal güzellik.",
                     "rating": 9.9
                 },
                 {
-                    "name": "Trevi Çeşmesi",
-                    "description": "Aşk Çeşmesi olarak da bilinen, içine bozuk para atıp dilek tutulan ünlü barok çeşme.",
+                    "name": "Senso-ji Tapınağı",
+                    "description": "Tokyo'nun en eski ve en renkli Budist tapınağı, huzur dolu bir sığınak.",
                     "rating": 9.6
                 }
             ]
         },
         {
-            "name": "New York",
-            "country": "Amerika Birleşik Devletleri",
-            "description": "Hiç uyumayan şehir. Devasa gökdelenleri, kültürel çeşitliliği ve enerjisiyle ünlü metropol.",
+            "name": "Kahire",
+            "country": "Mısır",
+            "description": "Antik dünyanın gizemlerini barındıran, Nil Nehri kıyısındaki tarihi başkent.",
             "places": [
                 {
-                    "name": "Özgürlük Anıtı",
-                    "description": "Amerika'nın özgürlük sembolü olan, Özgürlük Adası'nda yer alan devasa bakır heykel.",
-                    "rating": 9.5
+                    "name": "Gize Piramitleri",
+                    "description": "Dünyanın yedi harikasından günümüze ulaşan tek eser, antik dönemin mühendislik harikası.",
+                    "rating": 9.9
                 },
                 {
-                    "name": "Central Park",
-                    "description": "Manhattan'ın göbeğinde yer alan devasa ve huzur dolu şehir parkı.",
-                    "rating": 9.4
+                    "name": "Büyük Sfenks",
+                    "description": "İnsan başlı ve aslan gövdeli devasa heykel, piramitlerin ebedi bekçisi.",
+                    "rating": 9.7
                 }
             ]
         }

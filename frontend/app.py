@@ -7,8 +7,8 @@ st.set_page_config(
     layout="wide"
 )
 
-DEFAULT_API_URL = "https://fikri-backend.onrender.com"
-DEFAULT_API_TOKEN = "ddacc907ab564eb2e56bb1b2841e2fbe22f82083ecd2eb56a408f63312d3c93208ba24fe1593231ee85cc0bb4f98c8491eedc837956e323e725806deb3b03b6df180e404f93417d1a6c07f42303e77dfaeb72edcbbd0ac3f4b98be401e071bfe0a0980d97dd0b1e613b39dee0a906867d1a8301ceef81490cffb8414ff538121"
+DEFAULT_API_URL = ""
+DEFAULT_API_TOKEN = ""
 
 st.sidebar.markdown("### ⚙️ Bağlantı Ayarları / Settings")
 api_url = st.sidebar.text_input("Strapi API URL", value=DEFAULT_API_URL)
@@ -59,15 +59,25 @@ st.markdown("""
     html, body, [class*="css"]  {
         font-family: 'Inter', sans-serif;
     }
-    .stSelectbox label {
+    .stApp {
+        background-color: #0b132b;
+    }
+    [data-testid="stSidebar"] {
+        background-color: #1c2541;
+    }
+    .stSelectbox label, .stTextInput label {
         font-weight: 600 !important;
         font-size: 1.1rem !important;
+        color: #e0e1dd !important;
+    }
+    p, h1, h2, h3, h4, h5, h6, span, div {
+        color: #e0e1dd !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown(f"<h1 style='text-align: center; font-weight: 800; font-size: 4rem; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0;'>{t['title']}</h1>", unsafe_allow_html=True)
-st.markdown(f"<p style='text-align: center; color: #636e72; font-size: 1.3rem; margin-top: 10px; margin-bottom: 3rem; font-weight: 400;'>{t['subtitle']}</p>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='text-align: center; font-weight: 800; font-size: 4rem; background: linear-gradient(135deg, #4ea8de 0%, #5e60ce 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0;'>{t['title']}</h1>", unsafe_allow_html=True)
+st.markdown(f"<p style='text-align: center; color: #a9b3c4 !important; font-size: 1.3rem; margin-top: 10px; margin-bottom: 3rem; font-weight: 400;'>{t['subtitle']}</p>", unsafe_allow_html=True)
 
 if not api_token:
     st.warning(t["enter_token_warning"])
@@ -139,4 +149,4 @@ st.sidebar.markdown(f"#### ℹ️ {t['about_title']}")
 st.sidebar.info(t["about_desc"])
 
 st.divider()
-st.markdown("<p style='text-align: center; color: gray; font-size: 0.9rem;'>BIP210 Final Projesi | Geliştirici: Bahattin</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray !important; font-size: 0.9rem;'>BIP210 Final Projesi | Geliştirici: Ahmet</p>", unsafe_allow_html=True)
